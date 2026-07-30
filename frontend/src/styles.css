@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-light: #F8FAFC;
+    --bg-dark: #0F172A;
+    --card-light: #FFFFFF;
+    --card-dark: #1E293B;
+  }
+
+  body {
+    @apply bg-[#F8FAFC] dark:bg-[#0F172A] text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-700/60 rounded-full hover:bg-slate-400 dark:hover:bg-slate-600;
+  }
+}
+
+@layer utilities {
+  /* Premium Glassmorphism Panels */
+  .glass-panel {
+    @apply backdrop-blur-md bg-white/70 dark:bg-slate-900/60 border border-slate-200/50 dark:border-slate-800/50;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-sm bg-white dark:bg-slate-800/80 border border-slate-200/40 dark:border-slate-700/40 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .glass-modal {
+    @apply backdrop-blur-lg bg-white/90 dark:bg-slate-900/90 border border-slate-200/60 dark:border-slate-800/60 shadow-2xl;
+  }
+
+  /* Shimmer effect for skeleton loaders */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.08) 20%,
+      rgba(255, 255, 255, 0.15) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .dark .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0) 0%,
+      rgba(30, 41, 59, 0.3) 20%,
+      rgba(51, 65, 85, 0.4) 60%,
+      rgba(15, 23, 42, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Animations and tweaks */
+.drag-over {
+  @apply border-indigo-500 border-dashed border-2 bg-indigo-50/20 dark:bg-indigo-950/10 scale-[0.99] transition-all;
+}
+
+.weekly-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+}
+
+.dark .weekly-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(51, 65, 85, 0.15) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(51, 65, 85, 0.15) 1px, transparent 1px);
+}
