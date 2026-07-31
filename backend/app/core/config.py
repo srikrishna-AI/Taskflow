@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     project_name: str = "Task Management API"
     api_v1_str: str = "/api"
     backend_cors_origins: List[str] = [
-        "https://main.d349b3a7xdbvgd.amplifyapp.com/",
+        "https://main.d349b3a7xdbvgd.amplifyapp.com",
         "http://localhost:3000", 
         "http://127.0.0.1:3000",
         "http://localhost:3001", 
