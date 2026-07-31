@@ -19,7 +19,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const api: AxiosInstance = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api',
 });
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
