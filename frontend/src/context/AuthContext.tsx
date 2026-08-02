@@ -19,7 +19,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const api: AxiosInstance = axios.create({
-  baseURL: "https://zvft6lw820.execute-api.eu-north-1.amazonaws.com/api",
+  baseURL: "https://zvft6lw820.execute-api.eu-north-1.amazonaws.com",
   headers: {
     "Content-Type": "application/json",
   },
