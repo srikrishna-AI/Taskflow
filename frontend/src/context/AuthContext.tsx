@@ -19,7 +19,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const api: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || http://13.63.52.134,
+  baseURL: http://13.63.52.134,
   headers: {
     "Content-Type": "application/json",
   },
