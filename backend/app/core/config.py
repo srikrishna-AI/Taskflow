@@ -17,18 +17,7 @@ class Settings(BaseSettings):
         "http://127.0.0.1:3002"
     ]
 
-    database_url: str = "postgresql+psycopg://postgres:root@localhost:5432/taskmanagement"
-    db_host: str = "localhost"
-    db_port: int = 5432
-    db_name: str = "taskmanagement"
-    db_user: str = "postgres"
-    db_password: str = "root"
-
-    jwt_secret_key: str = "change-me"
-    jwt_refresh_secret_key: str = "change-me-refresh"
-    algorithm: str = "HS256"
-    access_token_expire_minutes: int = 30
-    refresh_token_expire_days: int = 7
+   
 
     model_config = SettingsConfigDict(
         env_file=".env",
